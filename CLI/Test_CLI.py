@@ -64,6 +64,26 @@ class CLITest(unittest.TestCase):
         """tests pwd command"""
         self.assertEqual(for_test("pwd\n")[-3:], "CLI")
 
+    def test_grep_for_stream(self):
+        """tests grep command for stream"""
+        self.assertEqual(for_test("echo \"aaaa\" | grep a\n"), "aaaa")
+
+    def test_grep_for_file_with_out_keys(self):
+        """tests grep command for file with out keys"""
+        self.assertEqual(for_test("grep abc test.txt\n"), "abc\n")
+
+    def test_grep_for_key_i(self):
+        """tests grep command for key -i"""
+        self.assertEqual(for_test("echo \"aaaa\" | grep -i A\n"), "aaaa")
+
+    def test_grep_for_key_w(self):
+        """tests grep command for key -w"""
+        self.assertEqual(for_test("echo \"aaaa abcs\" | grep -w aaa\n"), "")
+
+    def test_grep_for_key_A(self):
+        """tests grep command for key -A"""
+        self.assertEqual(for_test("grep -A 1 abc test.txt\n"), "abc\nHelloWorld!")
+
 
 if __name__ == '__main__':
     unittest.main()
