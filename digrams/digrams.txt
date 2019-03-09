@@ -1,0 +1,4 @@
+Контекстная диаграмма: https://drive.google.com/file/d/1XS1ZpWaj7g-RS_TF7ZAG2xV5y_PY2btG/view?usp=sharing
+Диаграмма 1-го уровня: https://drive.google.com/file/d/1vMGJRANJIrgCJ2AaNhzQKnO-ibKLTqS1/view?usp=sharing
+BPML: https://drive.google.com/file/d/18FsPvAln4vyeln1KDC1aZTYjL_0uvDKx/view?usp=sharing
+Диаграмма случаев использования: https://drive.google.com/file/d/1FhFWetuRY3Ia67VcGH65Bj6GA3bqK4dz/view?usp=sharing
