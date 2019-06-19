@@ -10,11 +10,19 @@ class Parser:
         self.parsed_args = []
         self.line = line
 
+    @staticmethod
+    def starts_with_quote(s):
+        return line.startswith("\"") or line.startswith("\'")
+
+    @staticmethod
+    def contains_no_space(s):
+        return len(s.split(" ")) == 1
+
     def parse(self, line = None):
         if line is None:
             line = self.line
-        if not line.startswith("\"") and not line.startswith("\'") \
-                and len(line.split(" ")) == 1 and line.find("=") != -1:
+        if not self.starts_with_quote(line) \
+                and self.contains_no_space(line) and line.find("=") != -1:
             self.parsed_args = [line.split("=")[0], '=', line.split("=")[1]]
             return
         if line.startswith("\""):
