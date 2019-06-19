@@ -1,7 +1,6 @@
 """This module contains a set of tests for CLI"""
 
 import unittest
-from Input import *
 from Commands.pwd1 import *
 from Commands.exit import *
 from Commands.wc import *
@@ -30,7 +29,7 @@ class CLITest(unittest.TestCase):
     def test_exit(self):
         try:
             exit()
-        except KeyboardInterrupt:
+        except ExitException:
             assert True
 
 

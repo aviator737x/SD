@@ -10,7 +10,7 @@ variables = {}
 commands = {'pwd': pwd, 'exit': exit, 'wc': wc, 'echo': echo, 'cat': cat}
 
 
-class Analizer:
+class Analyser:
     """Form new tree of pipes from 1 parameter: parser
     Field self.structure is dictionary,
     which makes syntax tree structure with pipes in internal vertices and arguments in liefs.
