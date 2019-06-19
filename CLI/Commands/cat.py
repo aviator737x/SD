@@ -3,10 +3,16 @@
 import os
 
 
-def cat(count, args):
+def cat(count = 0, args = ""):
     """Returns stream of strings from file or entry stream"""
 
-    if count > 2:
+    if count == 0:
+        while True:
+            s = input()
+            if s == "exit":
+                return ""
+            print(s)
+    elif count > 2:
         print("cat needs 1 file")
     elif len(args) == 1 and count == 1:
         return args[0]

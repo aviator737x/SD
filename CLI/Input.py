@@ -1,23 +1,25 @@
 """This module contains entry point"""
 
 from Parser import *
-from Analizator import *
+from Analizer import *
 import sys
 
 
 def for_test(line):
         print(line)
         parser = Parser(line)
-        analizator = Analizator(parser)
-        return analizator.run()
+        analizer = Analizer(parser)
+        return analizer.run()
 
 
 if __name__ == '__main__':
     try:
+        parser = Parser("")
         for line in sys.stdin:
-            parser = Parser(line)
-            analizator = Analizator(parser)
-            analizator.run()
-    except KeyboardInterrupt:
+            parser.reinit(line)
+            parser.parse()
+            analizer = Analizer(parser.parsed_args)
+            analizer.run()
+    except ExitException:
         pass
 

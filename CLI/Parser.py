@@ -1,19 +1,18 @@
-"""This module contains a class for command line parsing"""
+"""This module contains a class for command line parsing.
+It takes a string received from terminal and creates field self.parsed_args that is a list,
+containing separated tokens of command."""
+
 
 class Parser:
     def __init__(self, line):
-        """Inits Parser with 1 parameter
-        :param line: string received from shell"""
-
         if line:
             line = line[:len(line) - 1]
         self.parsed_args = []
-        self.parse(line)
+        self.line = line
 
-    def parse(self, line):
-        """Parses string with 1 parameter:
-        :param line: received string"""
-
+    def parse(self, line = None):
+        if line is None:
+            line = self.line
         if not line.startswith("\"") and not line.startswith("\'") \
                 and len(line.split(" ")) == 1 and line.find("=") != -1:
             self.parsed_args = [line.split("=")[0], '=', line.split("=")[1]]
@@ -55,5 +54,11 @@ class Parser:
             if line:
                 line = line[1:]
                 self.parse(line)
+
+    def reinit(self, line):
+        if line:
+            line = line[:len(line) - 1]
+        self.line = line
+        self.parsed_args = []
 
 
