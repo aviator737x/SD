@@ -25,7 +25,7 @@ class CLITest(unittest.TestCase):
         
     def test_wc(self):
         print(wc(2, ["test.txt"]))
-        assert (wc(2, ["test.txt"]) == "2 2 15")
+        assert (wc(2, ["test.txt"]) == "2 2 16")
 
 
 if __name__ == '__main__':
