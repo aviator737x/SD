@@ -5,6 +5,8 @@ from Commands.exit import *
 from Commands.wc import *
 from Commands.echo import *
 from Commands.cat import *
+import subprocess
+import shlex
 
 variables = {}
 commands = {'pwd': pwd, 'exit': exit, 'wc': wc, 'echo': echo, 'cat': cat}
@@ -16,6 +18,8 @@ class Analyser:
     which makes syntax tree structure with pipes in internal vertices and arguments in liefs.
     If the command is assignment, the variable is written in parser.parsed_args.
     Else it is written in syntax tree in order of solving pipes, where the number of command is key in tree."""
+
+    command = ""
 
     def __init__(self, parsed_args):
 
@@ -97,7 +101,13 @@ class Analyser:
             for i in range(self.key + 1):
                 line = self.structure[i]
                 if line[1] not in commands:
-                    print("No command", line)
+                    try:
+                        args = shlex.split(self.command)
+                        p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+                        result = p.communicate()[0]
+                        print(result)
+                    except Exception:
+                        print("No command", line)
                 else:
                     if len(line) > 2:
                         result = commands[line[1]](line[0], line[2:])

@@ -11,6 +11,7 @@ if __name__ == '__main__':
             parser.reinit(line)
             parser.parse()
             analyser = Analyser(parser.parsed_args)
+            analyser.command = line
             analyser.run()
     except ExitException:
         pass
