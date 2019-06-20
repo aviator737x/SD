@@ -6,7 +6,9 @@ def echo(count = 0, args = []):
 
     if count == 0:
         return ""
-    if len(args) > 1:
-        print("Too many args")
-    else:
-        return args[0]
+    result = ""
+    for arg in args:
+        result += arg
+        result += " "
+    result = result[:len(result) - 1]
+    return result
