@@ -42,8 +42,8 @@ class Analyser:
                     continue
 
     def make_lief(self, line, key):
-        line = self.find_variables(line)
         if line.startswith("\""):
+            line = self.find_variables(line)
             element = line[1:]
             words = element.split(" ")
             self.replace_vars(words)
@@ -65,6 +65,7 @@ class Analyser:
             self.structure[key].append(line)
             self.structure[key][0] += 1
         else:
+            line = self.find_variables(line)
             self.structure[key].append(line)
             self.structure[key][0] += 1
 
