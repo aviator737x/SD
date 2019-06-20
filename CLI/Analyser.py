@@ -106,7 +106,7 @@ class Analyser:
                         args = shlex.split(self.command)
                         p = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
                         result = p.communicate()[0]
-                        print(result)
+                        print(result.decode("utf-8"))
                     except Exception:
                         print("No command", line)
                 else:
