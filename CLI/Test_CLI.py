@@ -16,21 +16,6 @@ class CLITest(unittest.TestCase):
         assert (echo(1, ["abcd"]) == "abcd")
         assert (echo(1, ["aaa", "aaaa"]) is None)
 
-    def test_cat(self):
-        assert(cat(1, ["abcd"]), "abcd")
-        assert (cat(2, ["test.txt"]) == "abc\nHelloWorld!")
-
-    def test_pwd1(self):
-        assert (pwd() == os.getcwd())
-
-#    def test_wc(self):
-#        assert (wc(2, ["test.txt"]) == "2 2 15")
-
-    def test_exit(self):
-        try:
-            exit()
-        except ExitException:
-            assert True
 
 
 if __name__ == '__main__':
