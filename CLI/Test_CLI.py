@@ -24,6 +24,7 @@ class CLITest(unittest.TestCase):
         assert (pwd() == os.getcwd())
         
     def test_wc(self):
+        print(wc(2, ["test.txt"]))
         assert (wc(2, ["test.txt"]) == "2 2 15")
 
 
