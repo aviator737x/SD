@@ -86,7 +86,7 @@ class Analyser:
             if word[i] == '$':
                 i += 1
                 var = ""
-                while i < len(word) and (word[i] != '$' and word[i] != ' '):
+                while i < len(word) and (word[i] != '$' and word[i] != ' ' and word[i] != '\'' and word[i] != '\"'):
                     var += word[i]
                     i += 1
                 new_word += variables[var]
