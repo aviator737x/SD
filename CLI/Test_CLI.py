@@ -18,7 +18,7 @@ class CLITest(unittest.TestCase):
         
     def test_cat(self):
         assert(cat(1, ["abcd"]) == "abcd")
-        assert (cat(2, ["test.txt"]) == "abc\nHelloWorld!")
+        assert (cat(2, ["test.txt"]) == "abc\nHelloWorld!\n")
         
     def test_pwd1(self):
         assert (pwd() == os.getcwd())
