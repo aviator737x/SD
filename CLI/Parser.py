@@ -12,7 +12,7 @@ class Parser:
 
     @staticmethod
     def starts_with_quote(s):
-        return line.startswith("\"") or line.startswith("\'")
+        return s.startswith("\"") or s.startswith("\'")
 
     @staticmethod
     def contains_no_space(s):

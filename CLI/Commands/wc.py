@@ -3,9 +3,11 @@
 import os
 
 
-def wc(count, args):
+def wc(count = 0, args = []):
     """Returns number of lines, words and bytes for a given stream or file"""
 
+    if count == 0:
+        return ""
     if len(args) != 1:
         print("wc needs 1 file")
     else:
