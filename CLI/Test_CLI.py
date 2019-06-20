@@ -23,8 +23,8 @@ class CLITest(unittest.TestCase):
     def test_pwd1(self):
         assert (pwd() == os.getcwd())
 
-    def test_wc(self):
-        assert (wc(2, ["test.txt"]) == "2 2 15")
+#    def test_wc(self):
+#        assert (wc(2, ["test.txt"]) == "2 2 15")
 
     def test_exit(self):
         try:
