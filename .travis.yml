@@ -3,4 +3,4 @@ language: python
 python:
   - "2.6"
   
-script: python Test_CLI.py
+script: python CLI/Test_CLI.py
