@@ -15,7 +15,7 @@ class CLITest(unittest.TestCase):
     def test_echo(self):
         assert (echo(1, [""]) == "")
         assert (echo(1, ["abcd"]) == "abcd")
-        assert (echo(1, ["aaa", "aaaa"]) is None)
+        assert (echo(1, ["aaa", "aaaa"]) == "aaa aaaa")
 
     def test_cat(self):
         assert (cat(1, ["abcd"]) == "abcd")
